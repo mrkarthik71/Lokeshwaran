@@ -1,0 +1,3 @@
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity=1;x.target.style.transform='none';io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.t-item,.card,.edu').forEach(el=>{el.style.opacity=0;el.style.transform='translateY(18px)';el.style.transition='opacity .6s ease,transform .6s ease';io.observe(el)});
+addEventListener('scroll',()=>{const n=document.querySelector('.nav');if(n)n.style.boxShadow=scrollY>40?'0 6px 24px rgba(0,0,0,.4)':'none'});
